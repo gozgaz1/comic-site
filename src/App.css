@@ -1,5 +1,8 @@
+/*
 .App {
   text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -36,3 +39,50 @@
     transform: rotate(360deg);
   }
 }
+*/
+html {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  --offset: var(--space);
+  height: 95vh;
+  margin-left: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container h1{
+  color: var(--primary);
+  font-size: 3.4rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.container h2, .container p{
+  text-align: center;
+}
+.container h2{
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/*TODO: need to find a way to divide these components into workable individual container then style them IN CONJUNCTION with the sidebar*/
+/*TODO: left-margin still irky, not sure how to proplery make it dynamic*/
