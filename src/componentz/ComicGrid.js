@@ -5,7 +5,7 @@ import { motion }  from 'framer-motion';
 
 const ComicGrid = ({ setSelectedImg }) => {
     const { docs } = useFirestore('comics');
-    // console.log(docs);
+    console.log(docs);
 
     return (
         <div className="img-grid">
