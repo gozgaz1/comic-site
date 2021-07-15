@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import '../Styling/ProgressBar.css';
 
 const ProgressBar = ({ file, setFile, filePurpose, pageNo, folderType }) => {
-    const { url, progress } = useStorage(file, filePurpose.fType, pageNo.pageNo, folderType.fType);
+    const { url, progress } = useStorage(file, filePurpose.fType, pageNo, folderType.fType);
     console.log(progress, url);
 
     // to remove the progress bar after you finish uploading (ea. we receive the url from the upload)

@@ -11,7 +11,7 @@ export default function UploadForm(fType,pageNo) {
 
     const changeHandler = (e) => {
         let selectedFile = e.target.files[0]; // this is the first file of list of files being uploaded
-        console.log(selectedFile);
+        // console.log(selectedFile);
         if (selectedFile && types.includes(selectedFile.type)) {
             setFile(selectedFile);
             setError('');

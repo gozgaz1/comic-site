@@ -5,7 +5,7 @@ export default function ComicUpload() {
     return(
         <div className='portfolio-upload'>
             <h2>Comic Upload</h2>
-            <UploadForm fType='comics'/>
+            <UploadForm fType='comics' pageNo='0'/>
         </div>
     )
 }
