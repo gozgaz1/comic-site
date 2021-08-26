@@ -41,7 +41,7 @@
     grid-column: 1;
 }
 
-img {
+.img-grid img {
     max-width:100%;
     display: block;
     border-radius: 10px;

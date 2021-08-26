@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ImageGrid from '../../componentz/ImageGrid';
-import ImageModal from '../../componentz/ImageModal';
+import ImageGrid from '../../imageComponents/ImageGrid';
+import ImageModal from '../../imageComponents/ImageModal';
 
 export default function Portfolio() {
     const [selectedImg, setSelectedImg] = useState(null);

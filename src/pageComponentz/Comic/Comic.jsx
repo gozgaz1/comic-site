@@ -1,5 +1,5 @@
 import React from 'react';
-import ComicGrid from '../../componentz/ComicGrid';
+import ComicGrid from '../../comicComponents/ComicGrid';
 
 export default function Comic() {
     return (

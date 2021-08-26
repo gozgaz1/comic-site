@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import useStorage from '../stores/useStorage';
+import useStorageComic from '../stores/useStorageComic';
 import { motion } from 'framer-motion';
 import '../Styling/ProgressBar.css';
 
-const ProgressBar = ({ file, setFile, filePurpose, pageNo, folderType }) => {
-    const { url, progress } = useStorage(file, filePurpose.fType, pageNo, folderType.fType);
+const ProgressBarComic = ({ file, setFile, filePurpose, pageNo, folderType, chapter }) => {
+    const { url, progress } = useStorageComic(file, filePurpose, pageNo, folderType, chapter);
     console.log(progress, url);
 
     // to remove the progress bar after you finish uploading (ea. we receive the url from the upload)
@@ -22,4 +22,4 @@ const ProgressBar = ({ file, setFile, filePurpose, pageNo, folderType }) => {
     )
 }
 
-export default ProgressBar;
+export default ProgressBarComic;

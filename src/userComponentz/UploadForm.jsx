@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ProgressBar from '../componentz/ProgressBar';
 import '../Styling/UploadForm.css';
 
-export default function UploadForm(fType,pageNo) {
+export default function UploadForm({fType, pageNo, chapter}) {
     const [file, setFile] = useState(null);
 
     const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ export default function UploadForm(fType,pageNo) {
             <div className='output'>
                 { error && <div className='error'>{error}</div>}
                 { file && <div>{file.name}</div>}
-                { file && <ProgressBar file={file} setFile={setFile} filePurpose={fType} pageNo={pageNo} folderType={fType}/>}
+                { file && <ProgressBar file={file} setFile={setFile} filePurpose={fType} pageNo={pageNo} folderType={fType} chapter={chapter}/>}
             </div>
         </form>
     )

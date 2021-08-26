@@ -6,7 +6,7 @@ export default function PortfolioUpload() {
     return(
         <div className='portfolio-upload'>
             <h2>Portfolio Upload</h2>
-            <UploadForm fType='images' pageNo='0'/>
+            <UploadForm fType='images' pageNo={0}/>
         </div>
     )
 }
