@@ -25,11 +25,6 @@ const ComicReaderModal = ({fullChapterDoc, modalOpen, setModalOpen}) => {
         setModalOpen(!tempOpen);
     }
 
-    const changePage = (newPage) => {
-        let tempPage = newPage;
-        setCurrentPage(tempPage);
-    }
-
     const changePageIndex = (newPageIndex) => {
         // update the chapter at the particular indexes
         let tempDoc = fullChapterDoc;
@@ -39,13 +34,13 @@ const ComicReaderModal = ({fullChapterDoc, modalOpen, setModalOpen}) => {
         // run the functions
         setCurrPageIndex(newPageIndex);
         setCurrentChapter(tempDoc);
+        setCurrentPage(tempDoc[newPageIndex]);
     }
 
     return (
         <div className="comic-backdrop" >
             <ComicBar 
                 fullChapterDoc={currentChapter}
-                changePage={changePage}
                 exitModal={handleChange}
                 currentPage={currentPage}
                 changePageIndex={changePageIndex}
