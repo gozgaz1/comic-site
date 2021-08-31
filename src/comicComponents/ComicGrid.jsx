@@ -6,7 +6,7 @@ import { motion }  from 'framer-motion';
 import ComicReaderModal from './ComicReaderModal';
 
 
-const ComicGrid = ({ comicState, setComicState}) => {
+const ComicGrid = () => {
     // This is simply an encapsulator of other components. The MAIN component is ComicContainer.
     // This is where the current chapter is loaded.
     /*
@@ -15,9 +15,18 @@ const ComicGrid = ({ comicState, setComicState}) => {
     From here, you only need to open the modal.
     */
 
-    const changeFullChapter = (currChapter) => {
+          
+    const [fullChapter, setFullChapter] = useState([]);        // This is the array of pages that is the full chapter being selected by user.
+
+    const [currentChapter, setCurrentChapter] = useState(-1);   // This is the value of the current page
+
+    const { docs } = useFirestoreComic('comics');
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    useEffect(() => {
         firebaseDb.collection('comics')
-            .where('chapter', '==', currChapter)
+            .where('chapter', '==', currentChapter)
             .onSnapshot(snap => {
                 let documents = [];
                 snap.forEach(doc => {
@@ -29,22 +38,17 @@ const ComicGrid = ({ comicState, setComicState}) => {
                     tempDoc.forEach(doc => doc.className = 'comic-thumbnail');
                     tempDoc[0].className = 'comic-thumbnail current-page';
                 }                
-                setComicState({
-                    currentChapter: currChapter,
-                    fullChapter: tempDoc,
-                });
+                setFullChapter(tempDoc);
             });
-    }
+        console.log('check chapter ', currentChapter);
+    }, [currentChapter]);
 
-    const { docs } = useFirestoreComic('comics');
-
-    const [modalOpen, setModalOpen] = useState(false);
-
-    const updateChapter = (chapterNo) => {
-        changeFullChapter(chapterNo);
-        setModalOpen(true);
-    }
-
+    /*
+    useEffect(() => {
+        console.log(currentChapter);
+        console.log(fullChapter);
+    }, [currentChapter])
+    */
     return (
         <>
         <div className="img-grid">
@@ -52,7 +56,7 @@ const ComicGrid = ({ comicState, setComicState}) => {
             <motion.div className="img-wrap" key={doc.id} 
                 layout
                 whileHover={{ opacity: 1 }}s
-                onClick={() => {updateChapter(doc.chapter);}}
+                onClick={() => {setCurrentChapter(doc.chapter); setModalOpen(true);}}
             >
                 <motion.img src={doc.url} alt="uploaded pic"
                 initial={{ opacity: 0 }}
@@ -62,8 +66,10 @@ const ComicGrid = ({ comicState, setComicState}) => {
             </motion.div>
             ))}
         </div>
-        {modalOpen && comicState.fullChapter.length > 0 && <ComicReaderModal
-            fullChapterDoc={comicState.fullChapter}
+        {modalOpen && fullChapter.length > 0 && <ComicReaderModal
+            fullChapterDoc={fullChapter}
+            setCurrentChapter={setCurrentChapter}
+            setFullChapter={setFullChapter}
             modalOpen={modalOpen}
             setModalOpen={setModalOpen}
             />}

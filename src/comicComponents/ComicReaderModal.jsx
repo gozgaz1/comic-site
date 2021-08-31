@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ComicBar from './ComicBar';
 import '../Styling/Comic.css';
 
-const ComicReaderModal = ({fullChapterDoc, modalOpen, setModalOpen}) => {
+const ComicReaderModal = ({fullChapterDoc, setCurrentChapter, setFullChapter, modalOpen, setModalOpen}) => {
     /* 
         This component comprises of 3 smaller components.
         There's a comic bar to help aid with the page indicator. Pages are loaded from doc via firestore.
@@ -16,13 +16,11 @@ const ComicReaderModal = ({fullChapterDoc, modalOpen, setModalOpen}) => {
     // currePageNo is the number indicating the current page we're on.
     const [currPageIndex, setCurrPageIndex] = useState(0);
 
-    // currentChapter, this is the object which minic the main chapter object, only contains the fullChapter, meant for manipulation during modal
-    const [currentChapter, setCurrentChapter] = useState(fullChapterDoc);
-
     // Handling turning on/off the modal to read.
     const handleChange = (e) => {
         let tempOpen = modalOpen;
         setModalOpen(!tempOpen);
+        setCurrentChapter(-1);
     }
 
     const changePageIndex = (newPageIndex) => {
@@ -33,14 +31,14 @@ const ComicReaderModal = ({fullChapterDoc, modalOpen, setModalOpen}) => {
 
         // run the functions
         setCurrPageIndex(newPageIndex);
-        setCurrentChapter(tempDoc);
+        setFullChapter(tempDoc);
         setCurrentPage(tempDoc[newPageIndex]);
     }
 
     return (
         <div className="comic-backdrop" >
             <ComicBar 
-                fullChapterDoc={currentChapter}
+                fullChapterDoc={fullChapterDoc}
                 exitModal={handleChange}
                 currentPage={currentPage}
                 changePageIndex={changePageIndex}
