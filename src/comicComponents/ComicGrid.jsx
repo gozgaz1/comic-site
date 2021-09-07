@@ -40,15 +40,9 @@ const ComicGrid = () => {
                 }                
                 setFullChapter(tempDoc);
             });
-        console.log('check chapter ', currentChapter);
+        // console.log('check chapter ', currentChapter);
     }, [currentChapter]);
 
-    /*
-    useEffect(() => {
-        console.log(currentChapter);
-        console.log(fullChapter);
-    }, [currentChapter])
-    */
     return (
         <>
         <div className="img-grid">

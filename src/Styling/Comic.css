@@ -1,9 +1,53 @@
+/* comic-nav logics */
 .comic-nav {
     /* background: rgba(0,0,0,0.7); */
     display: flex;
     justify-content: center;
     position: fixed;
     width: 100%;
+    padding-top: 10px;
+    /*transform: translateX(25%);*/
+}
+
+.comic-page-wrapper {
+    /* wrapper is required to let extended contents (comic-page-area) to always be there*/
+    /* wrapper is here to help hide extended contents */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.comic-page-area {
+    width: 24rem;
+    transition: all 300ms ease-out;
+}
+
+/* comic-button logics */
+.comic-nav .comic-button {
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    height: 45px;
+    width: 45px;
+    transform: translateY(80%);
+    border-radius: 50%;
+    font-size: 2em;
+    line-height: 0.8em;
+    background-color: rgba(177, 177, 177, 0.5);
+    color: rgba(255, 255, 255, 0.4);
+    transition: 150ms linear;
+}
+
+.comic-button--left{
+    left: 20vw;
+}
+
+.comic-button--right{
+    right: 20vw;
+}
+
+.comic-button:hover {
+    background-color: rgba(120, 204, 243, 0.8);
+    color: rgba(255, 255, 255);
 }
 
 .comic-thumbnail {
@@ -16,6 +60,11 @@
 
 .comic-thumbnail.current-page{
     opacity: 1;
+}
+
+.comic-thumbnail:hover {
+    opacity: 1;
+    transition: 200ms linear;
 }
 
 /* backdrop logic */
@@ -38,6 +87,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
 .comic-track li {
     max-height: 70%;
     max-width: 100%;
@@ -51,4 +101,10 @@
     max-height: 80vh;
     margin: 20px auto;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+    animation: fadeIn 300ms;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }

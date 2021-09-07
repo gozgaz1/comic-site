@@ -17,11 +17,12 @@ const ComicReaderModal = ({fullChapterDoc, setCurrentChapter, setFullChapter, mo
     const [currPageIndex, setCurrPageIndex] = useState(0);
 
     // Handling turning on/off the modal to read.
-    const handleChange = (e) => {
+    const handleChange = () => {
         let tempOpen = modalOpen;
         setModalOpen(!tempOpen);
         setCurrentChapter(-1);
     }
+
 
     const changePageIndex = (newPageIndex) => {
         // update the chapter at the particular indexes
@@ -42,6 +43,7 @@ const ComicReaderModal = ({fullChapterDoc, setCurrentChapter, setFullChapter, mo
                 exitModal={handleChange}
                 currentPage={currentPage}
                 changePageIndex={changePageIndex}
+                currPageIndex={currPageIndex}
             />
         </div>
     )
