@@ -2,6 +2,7 @@ import React from 'react';
 //import UploadForm from '../../userComponentz/UploadForm';
 import PortfolioUpload from './PortfolioUpload';
 import ComicUpload from './ComicUpload';
+import ComicMultiUpload from './ComicMultiUpload';
 
 export default function DEV() {
     return (
@@ -9,6 +10,7 @@ export default function DEV() {
             <h1>DEV</h1>
             <PortfolioUpload />
             <ComicUpload />
+            <ComicMultiUpload />
         </div>
     )
 }
