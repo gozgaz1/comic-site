@@ -1,33 +1,65 @@
 /* upload form styles */
 form{
-    margin: 30px auto 10px;
-    text-align: center;
-  }
-  label input{
-    height: 0;
-    width: 0;
-    opacity: 0;
-  }
-  label{
-    display: block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #A0A0A0;
-    border-radius: 50%;
-    margin: 10px auto;
-    line-height: 30px;
-    color: #A0A0A0;
-    font-weight: bold;
-    font-size: 24px;
-  }
-  label:hover{
-    background-color: #5AE7BC;
-    color: #ffbf80;
-  }
-  .output{
-    height: 60px;
-    font-size: 0.8rem;
-  }
-  .error{
-    color: var(--error);
-  }
+  margin: 30px auto 10px;
+  text-align: center;
+}
+.specialized-label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+.specialized-label{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #A0A0A0;
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: #A0A0A0;
+  font-weight: bold;
+  font-size: 24px;
+}
+.specialized-label:hover{
+  background-color: #5AE7BC;
+  color: #ffbf80;
+}
+.output{
+  height: 60px;
+  font-size: 0.8rem;
+}
+
+.error{
+  color: var(--error);
+}
+
+/* this is specifically for multiple-upload form*/
+
+.multi-upload-form{
+  text-align: center;
+}
+
+.output-upload{
+  height: auto;
+  align-items: center;
+}
+
+.file-success{
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
+  background-color:#5AE7BC;
+  border-radius: 6px;
+}
+
+.file-error{
+  color: var(--error);
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
+  background-color:#e87070;
+  border-radius: 6px;
+}

@@ -23,7 +23,7 @@ export default function UploadForm({fType, pageNo, chapter}) {
 
     return (
         <form>
-            <label>
+            <label className='specialized-label'>
                 <input type="file" onChange={changeHandler}/>
                 <span>+</span>
             </label>
