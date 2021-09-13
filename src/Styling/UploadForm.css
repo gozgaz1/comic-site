@@ -38,28 +38,3 @@ form{
 .multi-upload-form{
   text-align: center;
 }
-
-.output-upload{
-  height: auto;
-  align-items: center;
-}
-
-.file-success{
-  display: inline-flex;
-  justify-content: space-evenly;
-  align-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 5px 0px 5px 0px;
-  margin: 5px 0px 5px 0px;
-  background-color:#5AE7BC;
-  border-radius: 6px;
-}
-
-.file-error{
-  color: var(--error);
-  padding: 5px 0px 5px 0px;
-  margin: 5px 0px 5px 0px;
-  background-color:#e87070;
-  border-radius: 6px;
-}

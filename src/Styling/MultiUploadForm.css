@@ -1,0 +1,94 @@
+/* this is specifically for multiple-upload form*/
+.modal-output-content{
+  width: 60vw;
+  background-color:aliceblue;
+  border-radius: 5px;
+}
+
+.modal-output-header, .modal-output-footer{
+  padding: 7px;
+}
+
+.modal-output-footer button{
+  padding: 10px;
+  background-color:#5ae7bd6d;
+  border-radius: 3px;
+  border: 1px solid rgba(48, 48, 48, 0.5);
+}
+
+.modal-output-header button{
+  float: right;
+  background-color: none;
+  border: none;
+  box-shadow:grey;
+  color: #A0A0A0;
+}
+
+.modal-output-header button:hover{
+  cursor: pointer;
+}
+
+.modal-output-footer button:hover{
+  cursor: pointer;
+  background-color: #5ae7bde0;
+}
+
+.modal-output-footer button:disabled{
+  text-decoration: line-through;
+  background-color: unset;
+  cursor: unset;
+}
+
+.modal-output-body{
+  align-items: center;
+  border-top: 1px solid rgb(206, 206, 206);
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+.modal-output-title{
+  margin: 0px;
+}
+
+
+.modal-output-header button, .modal-output-title{
+  display: inline;
+}
+
+input{
+  width: 50px;
+}
+
+.file-success{
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
+  background-color:#5AE7BC;
+  border-radius: 6px;
+}
+
+.file-error{
+  color: var(--error);
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
+  background-color:#e87070;
+  border-radius: 6px;
+}
+
+.modal-output-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

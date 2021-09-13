@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProgressBarComic from '../componentz/ProgressBarComic';
+import UploadModal from './UploadModal.jsx';
 import '../Styling/UploadForm.css';
 
 export default function UploadMultiFormComic({fType}) {
@@ -35,9 +35,10 @@ export default function UploadMultiFormComic({fType}) {
                     { file: selectedFiles[i],
                         error: '',
                         pageNo: 0,
-                        filePurpose: 'comics',
-                        folderType: '',
+                        filePurpose: fType,
+                        folderType: fType,
                         chapter: 0,
+                        run: false,
                     }
                 ]);
             } else {
@@ -45,50 +46,23 @@ export default function UploadMultiFormComic({fType}) {
                     { file: null,
                         error: 'Please select an image of file (.png), (.jpeg) or (.gif).\nFound (.' + selectedFiles[i].type + ') type uploaded for file ' + selectedFiles[i].name + '.',
                         pageNo: 0,
-                        filePurpose: 'comics',
-                        folderType: '',
+                        filePurpose: fType,
+                        folderType: fType,
                         chapter: 0,
+                        run: false,
                     }
                 ]);
             }
-        }
-        
+        }   
     }
 
-    const handlePageSelect = (e, index) => {
-        let tempFileArray = fileArray;
-        tempFileArray[index].pageNo = e.target.value;
-        setFileArray(tempFileArray);
-    }
-
-    const handleChapterSelect = (e,index) => {
-        let tempFileArray = fileArray;
-        tempFileArray[index].chapter = e.target.value;
-        setFileArray(tempFileArray);
-    }
-
-    const editFileUpload = (index) => {
-        return (fileArray[index] && fileArray[index].file) ? <div className='file-success'>
-            <label>{fileArray[index].file.name}</label>
-            <label>Page No.<input type='number' value={fileArray[index].pageNo} onChange={e => {handlePageSelect(e, index);}}/></label>
-            <label>Chapter No.<input type='number' value={fileArray[index].chapter} onChange={e => {handleChapterSelect(e, index)}}/>.</label>
-        </div> : <div className='file-error'>{fileArray[index].error}</div>
-    }
-
-    return (
+    return <>
         <div className='multi-upload-form'>
             <label className='specialized-label'>
                 <input type="file" onChange={changeHandler} multiple/>
                 <span>+</span>
             </label>
-            { fileArray.length > 0 && 
-                <div className='output-upload'>
-                    { fileArray.map((f, index) => {
-                        return editFileUpload(index);
-                    })}
-                    {/* file && <ProgressBarComic file={file} setFile={setFile} filePurpose={fType} pageNo={pageNo} folderType={fType} chapter={chapter}/>*/}
-                </div>
-            }
         </div>
-    )
+        <UploadModal fileArray={fileArray} setFileArray={setFileArray} />
+    </>
 }

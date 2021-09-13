@@ -4,7 +4,7 @@ import UploadFormComic from '../../userComponentz/UploadFormComic';
 
 export default function ComicUpload() {
     return(
-        <div className='portfolio-upload'>
+        <div>
             <h2>Comic Upload</h2>
             <UploadFormComic fType='comics' pageNo={0} chapter={0}/>
         </div>
