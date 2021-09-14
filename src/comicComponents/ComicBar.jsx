@@ -34,6 +34,7 @@ const ComicBar = ({fullChapterDoc, exitModal, currentPage, changePageIndex, curr
         // arrow right (39) or up (38) for moving next page
         // arrow left (37) or down (40) for moving previous page
         // esc (27) to exit
+        e.preventDefault();
         switch(e.keyCode) {
             case 39:
             case 38:
