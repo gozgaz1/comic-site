@@ -5,7 +5,7 @@ import * as GiIcons from 'react-icons/gi';
 import Home from './pageComponentz/Home/Home';
 import Comic from './pageComponentz/Comic/Comic';
 import Faq from './pageComponentz/Faq/Faq';
-import Portfolio from './pageComponentz/Portfolio/Portfolio';
+import Gallery from './pageComponentz/Gallery/Gallery';
 import Socials from './pageComponentz/Socials/Socials';
 import UnderConstruction from './pageComponentz/UnderConstruction/UnderConstruction';
 
@@ -24,13 +24,13 @@ export const routes = [
         key: 'home',
     },
     {
-        title: 'Portfolio',
+        title: 'Gallery',
         icon: <GiIcons.GiBookshelf />,
-        path: '/portfolio',
+        path: '/gallery',
         className: 'sidebar-text',
         avail: 'Y',
-        comp: Portfolio,
-        key: 'portfolio',
+        comp: Gallery,
+        key: 'gallery',
     },
     {
         title: 'Comic',
@@ -58,15 +58,6 @@ export const routes = [
         avail: 'N',
         comp: UnderConstruction,
         key: 'TBA2',
-    },
-    {
-        title: 'TBA',
-        icon: <IoIcons.IoIosConstruct />,
-        path: '/tba',
-        className: 'sidebar-text',
-        avail: 'N',
-        comp: UnderConstruction,
-        key: 'TBA3',
     },
     {
         title: 'Socials',

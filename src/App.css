@@ -42,6 +42,13 @@
 */
 html {
   overflow: hidden;
+  background-color:rgb(41, 41, 41);
+  color: white;
+}
+
+:root{
+  --bgcolor: rgb(41, 41, 41);
+  --txtcolor: white;
 }
 
 * {
@@ -72,9 +79,11 @@ html {
   font-size: 3.4rem;
   letter-spacing: 2px;
   font-weight: normal;
+  color: var(--txtcolor);
 }
 .container h2, .container p{
   text-align: center;
+  color: var(--txtcolor);
 }
 .container h2{
   margin-top: 60px;
@@ -83,6 +92,19 @@ html {
 
 .container::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (max-width: 860px) {
+  .container {
+    --offset: var(--space);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /*TODO: need to find a way to divide these components into workable individual container then style them IN CONJUNCTION with the sidebar*/

@@ -1,34 +1,37 @@
 .sidebar {
-    height: 5%;
+    height: 50px;
     display: flex;
     justify-content: left;
     align-items: center;
     padding: 0.5rem 0;
+    z-index: 1;
+    position: relative;
 }
 
+/*
 .sidebar-toggle {
-    /* background-color: #060b26; */
+    background-color: #060b26;
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: left;
     align-items: center;
 }
-
+*/
 
 .sidebar-options {
     margin-left: 1rem;
     font-size: 2rem;
     background: none;
-    color:#A0A0A0;
+    color: white;
 }
 
 .sidebar-options:hover {
-    color: #5AE7BC;
+    color: #59dfb7e0;
 }
 
 .sidebar-options.active {
-    color:#5AE7BC;
+    color:#59dfb7e0;
 }
 
 .sidebar-menu {
@@ -38,23 +41,25 @@
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 6%;
+    top: 50px;
     left: -8rem; /* reduce size if minimized */
     list-style-type: none; /* remove all bullets */
     transition: 550ms;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    z-index: 1;
+    background-color: var(--bgcolor);
+}
+
+.sidebar-menu.active {
+    left: 0;
+    top: 50px;
+    transition: 250ms;
 }
 
 .sidebar-menu::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
-  }
-
-.sidebar-menu.active {
-    left: 0;
-    top: 6%;
-    transition: 250ms;
 }
 
 .sidebar-text {
@@ -76,7 +81,7 @@
 .sidebar-text a {
     text-decoration: none;  /* no underline */
     font-size: 1.7rem;
-    color: #A0A0A0;
+    color: white;
     width: 95%;
     height: 100%;
     display: flex;
@@ -85,19 +90,18 @@
 }
 
 .sidebar-text a:hover, .sidebar-text.active a {
-    background-color:  #5AE7BC;
-    color: #ffbf80;
+    background-color:  #59dfb7e0;
+    color: #d38764;
 }
 
 .sidebar-text.inactive a:hover {
-    background-color:  #A0A0A0;
+    background-color:  #bfbfbf;
     text-decoration: line-through;
 }
 
 .sidebar-menu-items {
    width: 100%;
    margin-left: 1rem;
-   padding: 0.5rem 0 0 0;
 }
 
 .item-title {
@@ -107,4 +111,38 @@
 .item-icon {
     width: 25%; /* shift all icons to the right*/
     float: right;
+}
+
+
+@media screen and (max-width: 860px) {
+    .sidebar-menu {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        top: 50px;
+        left: -100%; /* reduce size if minimized */
+        transition: 350ms linear;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        z-index: 1;
+        background-color: var(--bgcolor);
+    }
+
+    .sidebar-menu.active {
+        left: 0;
+        top: 50px;
+        transition: 350ms linear;
+    }
+
+    .item-title {
+        width: 50%; /* shift all texts to the left*/
+        text-align: center;
+    }
+
+    .item-icon {
+        width: 50%; /* shift all icons to the right*/
+        text-align: center;
+    }
 }

@@ -5,6 +5,7 @@
     grid-gap: 5px;
     align-content: start;
     grid-auto-flow: dense;
+    flex-wrap: wrap;
 }
 /*     padding controls height, will always be perfectly square regardless of width
 .img-wrap {
@@ -36,6 +37,12 @@
     opacity: 0.6;
 }
 
+.img-wrap:hover {
+    transform: translate(-8px, -10px);
+    transition: all 200ms linear;
+    cursor:pointer;
+}
+
 .img-wrap > img {
     grid-row: 1 / -1;
     grid-column: 1;
@@ -45,4 +52,29 @@
     max-width:100%;
     display: block;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 860px) {
+    .img-grid {
+        margin: 20px auto;
+        display: flex;
+        grid-template-columns: repeat(5, 3fr);
+        grid-gap: 5px;
+        align-content: start;
+        grid-auto-flow: dense;
+        flex-wrap: wrap;
+    }
+    .img-wrap {
+        margin: 0;
+        display: flex;
+        grid-template-rows: 1fr auto;
+        margin-bottom: 10px;
+        break-inside: avoid;
+        opacity: 0.6;
+    }
+    .img-wrap:hover {
+        transform: none;
+        transition: all 200ms linear;
+        cursor:pointer;
+    }
 }

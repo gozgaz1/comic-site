@@ -9,7 +9,7 @@ export default function DEV() {
         <div className='container'>
             <h1>DEV</h1>
             <PortfolioUpload />
-            <ComicUpload />
+            {/*<ComicUpload />*/}
             <ComicMultiUpload />
         </div>
     )

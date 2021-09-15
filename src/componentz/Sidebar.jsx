@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
 import { routes } from '../routes';
-
 import { IoIosOptions } from 'react-icons/io';
 import '../Styling/Sidebar.css';
 
@@ -14,6 +13,11 @@ export default function Sidebar() {
     const showSidebar = () => {
         // this function handle the clicked state of menu burger
         setSidebar(!sidebar);
+    };
+
+    const closeSidebar = () => {
+        // this function handle the clicked state of menu burger
+        setSidebar(false);
     };
 
     const highlightOption = (option) => {
@@ -44,7 +48,7 @@ export default function Sidebar() {
                                     */
                                     className={`sidebar-text${item.avail !== 'Y' ? ' inactive' : activeOption === index ? ' active' : ''}`}
                                 >  
-                                    <Link to={item.path}>
+                                    <Link to={item.path} onClick={closeSidebar}>
                                         <span className='item-title'>{item.title}</span>
                                         <span className='item-icon'>{item.icon}</span>
                                     </Link>

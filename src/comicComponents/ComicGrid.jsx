@@ -47,7 +47,7 @@ const ComicGrid = () => {
         <>
         <div className="img-grid">
             {docs && docs.map(doc => (
-            <motion.div className="img-wrap" key={doc.id} 
+            <motion.div className="img-wrap" key={doc.id} title={'Read Chapter ' + doc.chapter}
                 layout
                 whileHover={{ opacity: 1 }}s
                 onClick={() => {setCurrentChapter(doc.chapter); setModalOpen(true);}}
