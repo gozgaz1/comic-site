@@ -12,7 +12,11 @@ const useFirestoreComic = (collection) => {
         snap.forEach(doc => {
           documents.push({...doc.data(), id: doc.id});
         });
-        setDocs(documents);
+        let tempDoc = [];
+        if (documents.length > 0) {
+            tempDoc = documents.slice().sort((a,b) => {return a.chapter< b.chapter ? -1 : a.chapter > b.chapter ? 1 : 0});
+        }
+        setDocs(tempDoc);
       });
       
     return () => unsub();

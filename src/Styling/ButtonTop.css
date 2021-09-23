@@ -1,0 +1,15 @@
+.scroll-top-button {
+    position: fixed; 
+    width: 100%;
+    left: 50%;
+    bottom: 40px;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 2;
+    cursor: pointer;
+    color: rgba(120, 204, 243, 0.8);
+}
+
+.scroll-top-button:hover {
+    color: #59dfb7e0;
+}

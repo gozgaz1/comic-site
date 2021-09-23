@@ -29,8 +29,8 @@ export default function Sidebar() {
         <>
             <div className="sidebar">
                 <div>
-                    <Link to="#" className={sidebar ? 'sidebar-options active' : 'sidebar-options'}>
-                        <FaIcons.FaBars onClick={showSidebar}/> {/* this is the burger icon, we bind to this because it affects the main state*/}
+                    <Link to="#" className={sidebar ? 'sidebar-options active' : 'sidebar-options'} onClick={showSidebar}>
+                        <FaIcons.FaBars /> {/* this is the burger icon, we bind to this because it affects the main state*/}
                     </Link>
                 </div>
                 <nav className={sidebar ? 'sidebar-menu active' : 'sidebar-menu'}>

@@ -5,7 +5,6 @@ import { firebaseDb } from '../firebase/firebase';
 import { motion }  from 'framer-motion';
 import ComicReaderModal from './ComicReaderModal';
 
-
 const ComicGrid = () => {
     // This is simply an encapsulator of other components. The MAIN component is ComicContainer.
     // This is where the current chapter is loaded.
@@ -49,14 +48,13 @@ const ComicGrid = () => {
             {docs && docs.map(doc => (
             <motion.div className="img-wrap" key={doc.id} title={'Read Chapter ' + doc.chapter}
                 layout
-                whileHover={{ opacity: 1 }}s
+                whileHover={{ opacity: 1 }}
                 onClick={() => {setCurrentChapter(doc.chapter); setModalOpen(true);}}
             >
-                <motion.img src={doc.url} alt="uploaded pic"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-                />
+                <img src={doc.url} alt="uploaded pic"/>
+                <div className="chapter-overlay">
+                    {doc.chapter}
+                </div>
             </motion.div>
             ))}
         </div>
