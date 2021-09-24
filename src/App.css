@@ -65,7 +65,7 @@ html {
 
 .container {
   --offset: var(--space);
-  height: 95vh;
+  max-height: 95vh;
   margin: 0px 1rem 1rem 4.5rem;
   align-items: center;
   justify-content: center;
@@ -90,19 +90,28 @@ html {
   font-size: 2.6rem;
 }
 
+/* We do this if we don't want scrollbar, but for mobile i think it's ok */
 .container::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: rgb(92, 92, 92);
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 50px;
 }
 
 @media screen and (max-width: 860px) {
   .container {
     --offset: var(--space);
+    max-height: 95vh;
     margin: 0px 1rem 1rem 1rem;
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
 }
 

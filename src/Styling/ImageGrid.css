@@ -27,6 +27,7 @@
     top: 0;
 }
 */
+
 .chapter-overlay {
     position: absolute;
     top: 50%;
@@ -86,6 +87,10 @@
     border-left: 1.1em solid #000000;
     border-radius: 50%;
     animation: load8 1.1s infinite linear;
+}
+
+.img-wrap:empty .chapter-overlay {
+    opacity: 0;
 }
   
 @keyframes load8 {

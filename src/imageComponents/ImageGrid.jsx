@@ -2,14 +2,12 @@ import React from 'react';
 import useFirestore from '../stores/useFirestore';
 import '../Styling/ImageGrid.css';
 import { motion }  from 'framer-motion';
-import ScrollButton from '../componentz/ScrollButton';
 
 const ImageGrid = ({ setSelectedImg }) => {
     const { docs } = useFirestore('images');
     // console.log(docs);
 
-    return (<>
-        <div className="img-grid">
+    return <div className="img-grid">
             {docs && docs.map(doc => (
             <motion.div className="img-wrap" key={doc.id} 
                 layout
@@ -20,8 +18,5 @@ const ImageGrid = ({ setSelectedImg }) => {
             </motion.div>
             ))}
         </div>
-        <ScrollButton />
-        </>
-    )
 }
 export default ImageGrid;
