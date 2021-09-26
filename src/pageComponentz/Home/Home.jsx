@@ -5,8 +5,8 @@ export default function Home() {
         <div className='container'>
             <h1>Home</h1>
             <div>
-                <h2>I'm Goz</h2>
-                <p>Most of the work I do here are hobby.</p>
+                <h2>Hi hi, I'm Goz</h2>
+                <p>Most of the work I do here is just my hobby.</p>
             </div>
         </div>
     )

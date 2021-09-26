@@ -6,6 +6,7 @@
     position: fixed;
     width: 100%;
     padding-top: 10px;
+    z-index: 2;
     /*transform: translateX(25%);*/
 }
 
@@ -79,6 +80,7 @@
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    z-index: 2;
 }
 
 /* comic-track logic */
@@ -108,4 +110,44 @@
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+@media screen and (max-width: 860px) {
+    .comic-track {
+        display: none;
+    }
+
+    .comic-button {
+        display: none;
+    }
+
+    .comic-nav {
+        /* background: rgba(0,0,0,0.7); */
+        display: flex;
+        justify-content: center;
+        padding-top: 7vh;
+        z-index: 2;
+        /*transform: translateX(25%);*/
+    }
+
+    .comic-page-wrapper {
+        /* wrapper is required to let extended contents (comic-page-area) to always be there*/
+        /* wrapper is here to help hide extended contents */
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .comic-page-area {
+        width: 90vw;
+        height: 87vh;
+    }
+
+    .comic-thumbnail {
+        position: relative;
+        margin: 0px 6px;
+        opacity: 1;
+        max-height: 100%;
+        width: auto;
+        height: 87vh;
+    }
 }

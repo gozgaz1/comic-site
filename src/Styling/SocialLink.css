@@ -1,0 +1,21 @@
+.link-table {
+    width: 100%;
+}
+
+.link-table tr {
+    height: 70px;
+}
+
+.link-table td {
+    text-align: center;
+}
+
+.link-table td:hover {
+    background-color:#59dfb7e0;
+}
+
+.link-table a {
+    text-decoration: none;  /* no underline */
+    font-size: 1.7rem;
+    color: white;
+}

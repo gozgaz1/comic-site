@@ -37,7 +37,7 @@ const ComicReaderModal = ({fullChapterDoc, setCurrentChapter, setFullChapter, mo
     }
 
     return (
-        <div className="comic-backdrop" >
+        <div className="comic-backdrop">
             <ComicBar 
                 fullChapterDoc={fullChapterDoc}
                 exitModal={handleChange}
