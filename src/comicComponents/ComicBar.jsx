@@ -72,6 +72,7 @@ const ComicBar = ({fullChapterDoc, exitModal, currentPage, changePageIndex, curr
 
     return(<>
         <div className='comic-nav'>
+            <button className="comic-backdrop-button" onClick={exitModal}><FaIcons.FaRegTimesCircle/></button>
             {
                 sectionIndex > 0 &&
                 <button className='comic-button comic-button--left' onClick={prevSection}><FaIcons.FaAngleLeft/></button>

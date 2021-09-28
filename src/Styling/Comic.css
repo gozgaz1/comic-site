@@ -31,6 +31,7 @@
     width: 45px;
     transform: translateY(80%);
     border-radius: 50%;
+    border: none;
     font-size: 2em;
     line-height: 0.8em;
     background-color: rgba(177, 177, 177, 0.5);
@@ -38,11 +39,11 @@
     transition: 150ms linear;
 }
 
-.comic-button--left{
+.comic-button.comic-button--left{
     left: 20vw;
 }
 
-.comic-button--right{
+.comic-button.comic-button--right{
     right: 20vw;
 }
 
@@ -81,6 +82,21 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     z-index: 2;
+}
+
+.comic-backdrop-button {
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    font-size: 2em;
+    line-height: 0.8em;
+    background-color: rgba(0,0,0,0);
+    color: rgb(255, 255, 255);
+    z-index: 3;
 }
 
 /* comic-track logic */
@@ -125,7 +141,6 @@
         /* background: rgba(0,0,0,0.7); */
         display: flex;
         justify-content: center;
-        padding-top: 7vh;
         z-index: 2;
         /*transform: translateX(25%);*/
     }
@@ -134,12 +149,13 @@
         /* wrapper is required to let extended contents (comic-page-area) to always be there*/
         /* wrapper is here to help hide extended contents */
         overflow-x: scroll;
+        padding-top: 6vh;
         white-space: nowrap;
     }
 
     .comic-page-area {
         width: 90vw;
-        height: 87vh;
+        height: 85vh;
     }
 
     .comic-thumbnail {
