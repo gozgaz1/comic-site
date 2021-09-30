@@ -42,20 +42,32 @@ const ComicGrid = () => {
         // console.log('check chapter ', currentChapter);
     }, [currentChapter]);
 
-    return (
-        <>
-        <div className="img-grid">
-            {docs && docs.map(doc => (
+    const ComicArray = ({doc}) => {
+        const [loaded, setLoaded] = useState(false);
+        return(
             <motion.div className="img-wrap" key={doc.id} title={'Read Chapter ' + doc.chapter}
                 layout
                 whileHover={{ opacity: 1 }}
                 onClick={() => {setCurrentChapter(doc.chapter); setModalOpen(true);}}
             >
-                <img src={doc.url} alt="uploaded pic"/>
-                <div className="chapter-overlay">
-                    {doc.chapter}
-                </div>
+                <img
+                    src={doc.url}
+                    onLoad={()=>{setLoaded(true)}}
+                    alt="uploaded pic"/>
+                {loaded && 
+                    <div className="chapter-overlay">
+                        {doc.chapter}
+                    </div>
+                }
             </motion.div>
+        )
+    }
+
+    return (
+        <>
+        <div className="img-grid">
+                {docs && docs.map(doc => (
+            <ComicArray doc={doc}/>
             ))}
         </div>
         {modalOpen && fullChapter.length > 0 && <ComicReaderModal

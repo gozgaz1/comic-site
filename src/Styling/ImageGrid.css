@@ -75,6 +75,8 @@
     display: block;
     border-radius: 10px;
     opacity: 0.6;
+    transition: opacity 3s linear;
+    -webkit-transition: opacity 3s;
 }
 
 .img-grid:empty {
@@ -92,6 +94,11 @@
 .img-wrap:empty .chapter-overlay {
     opacity: 0;
 }
+
+
+.loader{
+    display: none;
+}
   
 @keyframes load8 {
     0% {
@@ -100,6 +107,13 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.image-visible {
+    opacity: 1;
+}
+.image-hidden {
+    opacity: 0;
 }
 
 @media screen and (max-width: 860px) {
