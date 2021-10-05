@@ -36,7 +36,7 @@ const ImageGrid = ({ setSelectedImg }) => {
 
     return <div className="img-grid">
             {docs && docs.map(doc => (
-                <ImageComponent doc={doc} />
+                <ImageComponent doc={doc} key={doc.id}/>
             ))}
         </div>
 }

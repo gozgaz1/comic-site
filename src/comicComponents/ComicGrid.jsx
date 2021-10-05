@@ -33,7 +33,7 @@ const ComicGrid = () => {
                 });
                 let tempDoc = [];
                 if (documents.length > 0) {
-                    tempDoc = documents.slice().sort((a,b) => {return a.pageNo < b.pageNo ? -1 : a.pageNo > b.pageNo ? 1 : 0});
+                    tempDoc = documents.slice().sort((a,b) => {return +a.pageNo < +b.pageNo ? -1 : +a.pageNo > +b.pageNo ? 1 : 0});
                     tempDoc.forEach(doc => doc.className = 'comic-thumbnail');
                     tempDoc[0].className = 'comic-thumbnail current-page';
                 }                
@@ -44,8 +44,8 @@ const ComicGrid = () => {
 
     const ComicArray = ({doc}) => {
         const [loaded, setLoaded] = useState(false);
-        return(
-            <motion.div className="img-wrap" key={doc.id} title={'Read Chapter ' + doc.chapter}
+        return (
+            <motion.div className="img-wrap" key={doc.id+'_'+doc.chapter} title={'Read Chapter ' + doc.chapter}
                 layout
                 whileHover={{ opacity: 1 }}
                 onClick={() => {setCurrentChapter(doc.chapter); setModalOpen(true);}}
@@ -63,11 +63,13 @@ const ComicGrid = () => {
         )
     }
 
+    console.log(fullChapter);
     return (
         <>
         <div className="img-grid">
-                {docs && docs.map(doc => (
-            <ComicArray doc={doc}/>
+            {docs && docs.length < 1 && <h2>Nothing here yet.</h2>}
+            {docs && docs.length > 0 && docs.map(doc => (
+            <ComicArray doc={doc} key={doc.id}/>
             ))}
         </div>
         {modalOpen && fullChapter.length > 0 && <ComicReaderModal

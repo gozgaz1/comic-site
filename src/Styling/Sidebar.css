@@ -145,4 +145,16 @@
         width: 50%; /* shift all icons to the right*/
         text-align: center;
     }
+
+    .sidebar-menu-items {
+        width: 100%;
+        margin: 0;
+     }
+
+     .sidebar-text, .sidebar-text.inactive {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
 }

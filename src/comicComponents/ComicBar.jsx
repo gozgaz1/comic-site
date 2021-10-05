@@ -96,7 +96,7 @@ const ComicBar = ({fullChapterDoc, exitModal, currentPage, changePageIndex, curr
         </div>
         <div className='comic-track' onClick={exitModal}>
             {currentPage &&
-                <img src={currentPage.url} alt="page on"/>
+                <img className='comic-img' src={currentPage.url} alt="page on"/>
             }
         </div>
         </>
